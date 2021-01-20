@@ -23,7 +23,7 @@ public:
     void stateTable();
     void showInfo();
     void showHint();
-    void showCard();
+
     void showInstructions();
     void scorebar();
 };
@@ -192,17 +192,7 @@ void Game::showInstructions(){
     cout<<"- If Snake's langth equal 1 , you win and take 2000 point!";
 }
 
-void Game::showCard() {
-    SetColor(3);
-    gotoXY(3,4);
-    cout<<"Viettel < Code : 21075682453 >";
-    gotoXY(3,6);
-    cout<<"Vina    < Code : 73812042445 >";
-    gotoXY(3,8);
-    cout<<"Mobi    < Code : 87240121245 >";
-    gotoXY(3,11);
-    cout<<"Drive : longitk13haui@gmail.com -vldaybanoi";
-}
+
 void Game::scorebar(){
     gotoXY(0,21);
     SetColor(6);
@@ -386,9 +376,7 @@ int Snake::winning()
         score += 2000;
         return 1;
     }
-    if(dotx[0] == 5  && doty[0] == 19){
-        return 2;
-    }
+
     return 0;
 }
 int Snake::score = 0;
@@ -574,13 +562,7 @@ int main()
                 }
                 gotoXY(34,7);
                 cout<<Snake::score;
-                if(r.winning() == 2){
-                    system("cls");
-                    g.drawWall();
-                    gotoXY(0,21);
-                    cout<<"            ";
-                    g.showCard();
-                }
+
                 gotoXY(24,18);
                 SetColor(12);
                 cout<<"Press Spacebar to continue...";
