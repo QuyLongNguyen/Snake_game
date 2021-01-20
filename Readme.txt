@@ -1,0 +1,1 @@
+This is a game. Its name is Snake.
